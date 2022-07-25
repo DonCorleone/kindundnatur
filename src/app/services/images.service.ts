@@ -9,25 +9,6 @@ import { environment } from '../../environments/environment';
 export class ImagesService {
   constructor(private http: HttpClient) {}
 
-  getAlbum(albumHash: String): Observable<Image4Response> {
-    // console.log(`getAlbum`);
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        Authorization:
-          'Basic ' +
-          btoa(
-            environment.API_KEY_IMAGE4IO + ':' + environment.API_SECRET_IMAGE4IO
-          ),
-      }),
-    };
-
-    return this.http.get<Image4Response>(
-      environment.API_URL_IMAGE4IO + `/listFolder?path=/${albumHash}/`,
-      httpOptions
-    );
-  }
-
   listAssets(): Observable<Netlifile[]>{
     // console.log(`getAlbum`);
     const httpOptions = {
