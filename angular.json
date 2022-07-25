@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "kinderkultur-ch": {
+    "kindundnatur": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/kinderkultur-ch",
+            "outputPath": "dist/kindundnatur",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -87,13 +87,13 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "kinderkultur-ch:build:production"
+              "browserTarget": "kindundnatur:build:production"
             },
             "custom": {
-              "browserTarget": "kinderkultur-ch:build:custom"
+              "browserTarget": "kindundnatur:build:custom"
             },
             "development": {
-              "browserTarget": "kinderkultur-ch:build:development"
+              "browserTarget": "kindundnatur:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -101,7 +101,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "kinderkultur-ch:build"
+            "browserTarget": "kindundnatur:build"
           }
         },
         "test": {
@@ -125,5 +125,5 @@
       }
     }
   },
-  "defaultProject": "kinderkultur-ch"
+  "defaultProject": "kindundnatur"
 }

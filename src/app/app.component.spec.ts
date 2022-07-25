@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'kinderkultur-ch'`, () => {
+  it(`should have as title 'kindundnatur'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('kinderkultur-ch');
+    expect(app.title).toEqual('kindundnatur');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('kinderkultur-ch app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('kindundnatur app is running!');
   });
 });
