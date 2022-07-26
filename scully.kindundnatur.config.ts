@@ -7,7 +7,7 @@ export const config: ScullyConfig = {
   outDir: './dist/static', // directory for scully build artifacts
   defaultPostRenderers: [],
   routes: {
-    '/spielgruppe/:id': {
+    '/:id': {
       serverTimeout: 300000,
       type: 'json',
       id: {
