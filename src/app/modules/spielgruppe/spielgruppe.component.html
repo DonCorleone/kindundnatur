@@ -23,10 +23,10 @@
     </div>
     <div class="grid-body-right"></div>
 
-    <div class="grid-footer">
+    <div *ngIf="!home" class="grid-footer">
       <div class="grid-footer-left"></div>
       <div class="grid-icon-back">
-        <a href="https://kinderkultur.ch">
+        <a href="javascript:void(0)" (click)="back()">
           <app-back-icon [isSpielgruppe]="true"></app-back-icon>
         </a>
       </div>
