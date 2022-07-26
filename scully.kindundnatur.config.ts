@@ -11,7 +11,7 @@ export const config: ScullyConfig = {
       serverTimeout: 300000,
       type: 'json',
       id: {
-        url: 'https://kinderkultur.ch/spielgruppe',
+        url: 'https://kindundnatur.ch/spielgruppe',
         property: '_id',
       },
     },
