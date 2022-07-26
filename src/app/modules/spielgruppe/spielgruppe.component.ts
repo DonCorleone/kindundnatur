@@ -28,6 +28,7 @@ export class SpielgruppeComponent implements OnInit, OnDestroy {
       takeUntil(this._ngDestroy$),
       filter((event) => event instanceof NavigationEnd))
       .subscribe((x) => {
+        console.log(x);
         this.home = (x as NavigationEnd).url === '/';
       });
   }
