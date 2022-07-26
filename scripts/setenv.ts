@@ -25,5 +25,5 @@ writeFile(targetPath, environmentFileContent, function (err: any) {
   if (err) {
     console.log(err);
   }
-  console.log(`Wrote ${argv.environment} variables to ${targetPath}`);
+  console.log(`Wrote ${JSON.stringify(argv)} variables to ${targetPath}`);
 });
