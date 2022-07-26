@@ -23,6 +23,7 @@ export class SpielgruppeComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
+    this.home = this.router.url === '/';
     this.router.events
       .pipe(
       takeUntil(this._ngDestroy$),
