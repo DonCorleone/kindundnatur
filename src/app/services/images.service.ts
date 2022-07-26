@@ -22,7 +22,7 @@ export class ImagesService {
     return this.http.get<Netlifile[]>(
       'https://api.netlify.com/api/v1' + `/sites/${environment.SITE_ID}/files/`,
       httpOptions
-    ).pipe(map(p => p.filter(f => f.path.startsWith('/assets/carousel-7000'))));
+    ).pipe(map(p => p.filter(f => f.path.startsWith('/assets/carousel'))));
   }
 }
 
