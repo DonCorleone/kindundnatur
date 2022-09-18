@@ -8,6 +8,7 @@ import { SpielgruppeInfoComponent } from './spielgruppe-info/spielgruppe-info.co
 import { SpielgruppeOverviewComponent } from './spielgruppe-overview/spielgruppe-overview.component';
 import { SpielgruppeLeitungComponent } from './spielgruppe-leitung/spielgruppe-leitung.component';
 import { SpielgruppeOrtComponent } from './spielgruppe-ort/spielgruppe-ort.component';
+import { ContactFormComponent } from './contact-form/contact-form.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { SpielgruppeOrtComponent } from './spielgruppe-ort/spielgruppe-ort.compo
     SpielgruppeOverviewComponent,
     SpielgruppeLeitungComponent,
     SpielgruppeOrtComponent,
+    ContactFormComponent,
   ],
   imports: [CommonModule, SpielgruppeRoutingModule, SharedModule],
 })
