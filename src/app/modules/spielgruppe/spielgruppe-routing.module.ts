@@ -5,6 +5,7 @@ import { SpielgruppeInfoComponent } from './spielgruppe-info/spielgruppe-info.co
 import { SpielgruppeOverviewComponent } from './spielgruppe-overview/spielgruppe-overview.component';
 import { SpielgruppeLeitungComponent } from './spielgruppe-leitung/spielgruppe-leitung.component';
 import { SpielgruppeOrtComponent } from './spielgruppe-ort/spielgruppe-ort.component';
+import {SpielgruppeNewsletterComponent} from "./spielgruppe-newsletter/spielgruppe-newsletter.component";
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
       {
         path: 'ort',
         component: SpielgruppeOrtComponent, // another child route component that the router renders
+      },
+      {
+        path: 'newsletter',
+        component: SpielgruppeNewsletterComponent, // another child route component that the router renders
       },
     ],
   },
