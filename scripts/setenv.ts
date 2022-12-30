@@ -13,6 +13,7 @@ const environmentFileContent = isProduction
    SITE_ID: "${process.env?.['SITE_ID']}",
    API_KEY_NETLIFY: "${process.env?.['API_KEY_NETLIFY']}",
    URL: "${process.env?.['URL']}",
+   START_NEXT_SEMESTER: "${process.env?.['START_NEXT_SEMESTER']}",
 };`
   : `export const environment = {
    production: false,
@@ -20,6 +21,7 @@ const environmentFileContent = isProduction
    SITE_ID: "${process.env?.['SITE_ID']}",
    API_KEY_NETLIFY: "${process.env?.['API_KEY_NETLIFY']}",
    URL: "${process.env?.['URL']}",
+   START_NEXT_SEMESTER: "${process.env?.['START_NEXT_SEMESTER']}",
 };`; // write the content to the respective file
 writeFile(targetPath, environmentFileContent, function (err: any) {
   if (err) {

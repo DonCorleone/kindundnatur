@@ -3,5 +3,6 @@ export const environment = {
   API_KEY_NETLIFY: '',
   SITE_ID: '',
   NODE_VERSION: '16',
-  URL: ''
+  URL: '',
+  START_NEXT_SEMESTER: '2099-31-12'
 };
