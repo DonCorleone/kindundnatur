@@ -11,6 +11,7 @@ import {
   takeUntil,
 } from 'rxjs';
 import { Meta, Title } from '@angular/platform-browser';
+import {SeoService} from "../../services/seo.service";
 
 @Component({
   selector: 'app-spielgruppe',
@@ -25,8 +26,7 @@ export class SpielgruppeComponent implements OnInit, OnDestroy {
   constructor(
     private location: Location,
     private router: Router,
-    private meta: Meta,
-    private title: Title
+    private seoService: SeoService
   ) {}
   back(): void {
     if (this.router.url === '/') {
@@ -37,6 +37,7 @@ export class SpielgruppeComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
+
     this.home = this.router.url === '/';
     this.router.events
       .pipe(
@@ -44,31 +45,17 @@ export class SpielgruppeComponent implements OnInit, OnDestroy {
         filter((event) => event instanceof NavigationEnd)
       )
       .subscribe((x) => {
-        this.setDescription(
+        this.seoService.setDescription(
           'Kind und Natur - die Indoor- und Outdoor-Spielgruppe in Luzern. Auf dem Tribschenhorn in Luzern. Für Kinder ab 3 bis 5 Jahre. Jeden Dienstag.',
           (x as NavigationEnd).url
         );
-        this.setTitle('Kind und Natur', (x as NavigationEnd).url);
+        this.seoService.setTitle('Kind und Natur', (x as NavigationEnd).url);
 
         this.home = (x as NavigationEnd).url === '/';
       });
   }
 
-  setTitle(newTitle: string, postfix: string) {
-    const postfixStripped = postfix == '/' ? 'Home' : postfix.replace('/', '');
-    this.title.setTitle(`${newTitle} - ${postfixStripped}`);
-  }
 
-  setDescription(newDescription: string, prefix: string) {
-
-    const prefixStripped = prefix == '/' ? 'Home' : prefix.replace('/', '');
-    this.meta.addTags([
-      {
-        name: 'description',
-        content: `${prefixStripped} : ${newDescription}`
-      },
-    ]);
-  }
 
   ngOnDestroy() {
     this._ngDestroy$.next();
