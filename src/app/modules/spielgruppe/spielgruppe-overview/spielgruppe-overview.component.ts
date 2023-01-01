@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {environment} from "../../../../environments/environment";
+import {DatePipe} from "@angular/common";
 
 @Component({
   selector: 'app-spielgruppe-overview',
@@ -8,13 +9,17 @@ import {environment} from "../../../../environments/environment";
 })
 export class SpielgruppeOverviewComponent implements OnInit {
   semestername: string = '';
-  semesterstart: Date = new Date();
-
+  semesterstart: string | null= '';
+  constructor(private datePipe: DatePipe) {
+  }
   ngOnInit(): void {
     const semesterStartStr = environment.START_NEXT_SEMESTER;
     if (semesterStartStr){
-      this.semesterstart = new Date(semesterStartStr);
-      this.semestername = this.semesterstart.getMonth() < 5 ? 'Frühlingssemester' : 'Herbstsemester';
+      const semesterStartDate = new Date(semesterStartStr);
+      if (semesterStartDate){
+        this.semesterstart = this.datePipe.transform(semesterStartDate,'fullDate','+0200' ,'de-CH');
+        this.semestername = semesterStartDate.getMonth() < 5 ? 'Frühlingssemester' : 'Herbstsemester';
+      }
     }
   }
 }

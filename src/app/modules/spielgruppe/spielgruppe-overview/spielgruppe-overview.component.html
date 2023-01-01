@@ -29,7 +29,8 @@
   <p>CHF 660.- pro Morgen für ein Semester.</p>
   <h3>Anmeldung:</h3>
   <p>
-    Das {{semestername}} startet am {{semesterstart | date :'fullDate':'+0200':'fr'}}. Bei genügend
+    <span ngif="semesterstart">Das {{semestername}} startet am {{semesterstart}}. </span>
+    Bei genügend
     Anmeldungen wird auch noch der Montag angeboten. Die Kinder könnten dann für
     einen oder für zwei Morgen pro Woche angemeldet werden.
   </p>
