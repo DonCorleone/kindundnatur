@@ -18,7 +18,7 @@ import {SeoService} from "../../services/seo.service";
   templateUrl: './spielgruppe.component.html',
   styleUrls: ['./spielgruppe.component.scss'],
 })
-export class SpielgruppeComponent implements OnInit, OnDestroy {
+export class SpielgruppeComponent implements OnDestroy {
   home: boolean = false;
 
   private _ngDestroy$ = new Subject<void>();
@@ -27,19 +27,9 @@ export class SpielgruppeComponent implements OnInit, OnDestroy {
     private location: Location,
     private router: Router,
     private seoService: SeoService
-  ) {}
-  back(): void {
-    if (this.router.url === '/') {
-      this.location.back();
-    } else {
-      this.location.back();
-    }
-  }
-
-  ngOnInit(): void {
-
+  ) {
     this.home = this.router.url === '/';
-    this.router.events
+    router.events
       .pipe(
         takeUntil(this._ngDestroy$),
         filter((event) => event instanceof NavigationEnd)
@@ -54,9 +44,13 @@ export class SpielgruppeComponent implements OnInit, OnDestroy {
         this.home = (x as NavigationEnd).url === '/';
       });
   }
-
-
-
+  back(): void {
+    if (this.router.url === '/') {
+      this.location.back();
+    } else {
+      this.location.back();
+    }
+  }
   ngOnDestroy() {
     this._ngDestroy$.next();
     this._ngDestroy$.complete();
