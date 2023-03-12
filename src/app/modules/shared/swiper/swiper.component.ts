@@ -48,7 +48,7 @@ export class SwiperComponent implements OnInit {
 
             this.files$ = this.imageService.listAssets().pipe(
               map((p) => {
-                  p.forEach( image => image.path = `${environment.URL}${image.path}?nf_resize=fit&w=${width}`);
+                  p.forEach( image => image.path = `${environment.URL}${image.path}?nf_resize=smartcrop&w=600&h=450`);
                   return p;
                 }
               )
