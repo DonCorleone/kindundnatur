@@ -10,6 +10,9 @@ import { SpielgruppeLeitungComponent } from './spielgruppe-leitung/spielgruppe-l
 import { SpielgruppeOrtComponent } from './spielgruppe-ort/spielgruppe-ort.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { SpielgruppeNewsletterComponent } from './spielgruppe-newsletter/spielgruppe-newsletter.component';
+import {
+  SpielgruppeLeitungEvamariaComponent
+} from "./spielgruppe-leitung-evamaria/spielgruppe-leitung-evamaria.component";
 
 @NgModule({
   declarations: [
@@ -17,6 +20,7 @@ import { SpielgruppeNewsletterComponent } from './spielgruppe-newsletter/spielgr
     SpielgruppeInfoComponent,
     SpielgruppeOverviewComponent,
     SpielgruppeLeitungComponent,
+    SpielgruppeLeitungEvamariaComponent,
     SpielgruppeOrtComponent,
     ContactFormComponent,
     SpielgruppeNewsletterComponent,

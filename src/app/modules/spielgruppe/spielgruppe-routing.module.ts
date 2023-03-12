@@ -6,6 +6,9 @@ import { SpielgruppeOverviewComponent } from './spielgruppe-overview/spielgruppe
 import { SpielgruppeLeitungComponent } from './spielgruppe-leitung/spielgruppe-leitung.component';
 import { SpielgruppeOrtComponent } from './spielgruppe-ort/spielgruppe-ort.component';
 import {SpielgruppeNewsletterComponent} from "./spielgruppe-newsletter/spielgruppe-newsletter.component";
+import {
+  SpielgruppeLeitungEvamariaComponent
+} from "./spielgruppe-leitung-evamaria/spielgruppe-leitung-evamaria.component";
 
 const routes: Routes = [
   {
@@ -23,6 +26,9 @@ const routes: Routes = [
       {
         path: 'leitung',
         component: SpielgruppeLeitungComponent, // another child route component that the router renders
+      },{
+        path: 'leitungEvamaria',
+        component: SpielgruppeLeitungEvamariaComponent, // another child route component that the router renders
       },
       {
         path: 'ort',
