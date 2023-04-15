@@ -20,6 +20,7 @@
     <div class="grid-body-left"></div>
     <div class="grid-body">
       <router-outlet></router-outlet>
+      <p *ngIf="home">Die Naturspielgruppe Tribschenhorn ist Mitglied bei SSLV</p>
     </div>
     <div class="grid-body-right"></div>
 
@@ -27,9 +28,9 @@
       <div class="grid-footer-left"></div>
       <div class="grid-icon-back">
         <div *ngIf="!home else homeFooter">
-        <a href="javascript:void(0)" (click)="back()">
-          <app-back-icon [isSpielgruppe]="true"></app-back-icon>
-        </a>
+          <a href="javascript:void(0)" (click)="back()">
+            <app-back-icon [isSpielgruppe]="true"></app-back-icon>
+          </a>
         </div>
         <ng-template #homeFooter>
             <a href="https://sslv.ch">
