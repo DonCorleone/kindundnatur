@@ -23,14 +23,20 @@
     </div>
     <div class="grid-body-right"></div>
 
-    <div *ngIf="!home" class="grid-footer">
+    <div class="grid-footer">
       <div class="grid-footer-left"></div>
       <div class="grid-icon-back">
+        <div *ngIf="!home else homeFooter">
         <a href="javascript:void(0)" (click)="back()">
           <app-back-icon [isSpielgruppe]="true"></app-back-icon>
         </a>
+        </div>
+        <ng-template #homeFooter>
+            <a href="https://sslv.ch">
+              <img ngSrc="assets/sslv.png" fill/>
+            </a>
+        </ng-template>
       </div>
       <div class="grid-footer-right"></div>
     </div>
-  </div>
 </div>

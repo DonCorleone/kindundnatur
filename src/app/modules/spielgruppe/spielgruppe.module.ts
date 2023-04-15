@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {CommonModule, NgOptimizedImage} from '@angular/common';
 
 import { SpielgruppeRoutingModule } from './spielgruppe-routing.module';
 import { SpielgruppeComponent } from './spielgruppe.component';
@@ -25,6 +25,6 @@ import {
     ContactFormComponent,
     SpielgruppeNewsletterComponent,
   ],
-  imports: [CommonModule, SpielgruppeRoutingModule, SharedModule],
+    imports: [CommonModule, SpielgruppeRoutingModule, SharedModule, NgOptimizedImage],
 })
 export class SpielgruppeModule {}

@@ -110,6 +110,11 @@
   .grid-icon-back {
     grid-area: grid-icon-back;
     width: 100%;
+    position: relative;
+    img {
+      width: 100%;
+      height: auto !important;
+    }
   }
   .grid-footer-right {
     grid-area: grid-footer-right;
