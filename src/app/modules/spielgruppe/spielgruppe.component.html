@@ -20,24 +20,39 @@
     <div class="grid-body-left"></div>
     <div class="grid-body">
       <router-outlet></router-outlet>
-      <p *ngIf="home">Die Naturspielgruppe Tribschenhorn ist Mitglied bei SSLV</p>
     </div>
     <div class="grid-body-right"></div>
 
     <div class="grid-footer">
       <div class="grid-footer-left"></div>
       <div class="grid-icon-back">
-        <div *ngIf="!home else homeFooter">
+        <div *ngIf="!home; else homeFooter">
           <a href="javascript:void(0)" (click)="back()">
             <app-back-icon [isSpielgruppe]="true"></app-back-icon>
           </a>
         </div>
         <ng-template #homeFooter>
+          <div class="footer-images">
             <a href="https://sslv.ch">
-              <img ngSrc="assets/sslv.png" fill/>
+              <p>
+                Die Naturspielgruppe Tribschenhorn ist Mitglied des Programms
+                Frühe Sprachförderung der Stadt Luzern
+              </p>
             </a>
+            <a href="http://www.kinderbetreuung.stadtluzern.ch/">
+              <img src="assets/foerderung.png" />
+              <img src="assets/stadtluzern.png" />
+            </a>
+            <a href="https://sslv.ch">
+              <p>Die Naturspielgruppe Tribschenhorn ist Mitglied bei SSLV</p>
+            </a>
+            <a href="https://sslv.ch">
+              <img src="assets/sslv.png" />
+            </a>
+          </div>
         </ng-template>
       </div>
       <div class="grid-footer-right"></div>
     </div>
+  </div>
 </div>

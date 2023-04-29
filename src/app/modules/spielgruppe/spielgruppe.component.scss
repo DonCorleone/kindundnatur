@@ -1,7 +1,6 @@
 @import "../../../assets/library";
 
 .spielgruppe-wrapper {
-
   background-color: $spielgruppe-icon-bg;
 
   font-family: "Alegreya", minion-pro, serif;
@@ -27,21 +26,21 @@
   @media only screen and (min-width: 992px) {
     .grid-container {
       grid-template-columns: 1fr 800px 1fr;
-      grid-template-rows: 120px 180px auto 180px;
+      grid-template-rows: 120px 180px auto auto;
     }
   }
 
   @media only screen and (min-width: 576px) and (max-width: 991px) {
     .grid-container {
       grid-template-columns: 1fr 600px 1fr;
-      grid-template-rows: 60px 180px auto 180px;
+      grid-template-rows: 60px 180px auto auto;
     }
   }
 
   @media only screen and (max-width: 575px) {
     .grid-container {
       grid-template-columns: 1fr 366px 1fr;
-      grid-template-rows: 60px 180px auto 160px;
+      grid-template-rows: 60px 180px auto auto;
     }
   }
   .grid-logo-left {
@@ -105,19 +104,48 @@
   }
   .grid-footer-left {
     grid-area: grid-footer-left;
-    width: 100%;
+    width: 0;
   }
   .grid-icon-back {
     grid-area: grid-icon-back;
     width: 100%;
     position: relative;
-    img {
-      width: 100%;
-      height: auto !important;
-    }
   }
   .grid-footer-right {
     grid-area: grid-footer-right;
+    width: 0;
+  }
+
+  .footer-images {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
+    padding-bottom: 20px;
+
+    a {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: center;
+      img {
+        @at-root #{&} {
+          @at-root #{&} {
+            background-color: white;
+            padding: 10px;
+            gap: 10px;
+          }
+        }
+      }
+    }
+
+    p {
+      text-align: center;
+    }
+
+    img {
+      max-height: 80px;
+    }
   }
 }
