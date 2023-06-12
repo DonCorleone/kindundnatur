@@ -6,21 +6,15 @@
     <base href="/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
-    <script id="mcjs">
-      !(function (c, h, i, m, p) {
-        (m = c.createElement(h)),
-          (p = c.getElementsByTagName(h)[0]),
-          (m.async = 1),
-          (m.src = i),
-          p.parentNode.insertBefore(m, p);
-      })(
-        document,
-        "script",
-        "https://chimpstatic.com/mcjs-connected/js/users/534efaed4adaf712b10fbd9b5/ae813a00e6675000da1597d69.js"
-      );
-    </script>
   </head>
   <body>
+      <!-- A little help for the Netlify bots if you're not using a SSG -->
+      <form name="subscribe" netlify netlify-honeypot="bot-field" hidden 
+      action="/schlosswochen/success">
+        <input type="text" name="first_name" />
+        <input type="text" name="last_name" />
+        <input type="email" name="email" />
+      </form>
     <app-root></app-root>
   </body>
 </html>

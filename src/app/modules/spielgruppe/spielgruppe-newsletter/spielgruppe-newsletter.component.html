@@ -1,102 +1,26 @@
 <h1>Naturspielgruppe Tribschenhorn Luzern - Newsletter</h1>
-
-<div id="mc_embed_signup">
+<div class="container">
+  <h3>Newsletter:</h3>
   <form
-    action="https://schlosswochen.us10.list-manage.com/subscribe/post?u=534efaed4adaf712b10fbd9b5&amp;id=dfb14f89f9&amp;v_id=5144&amp;f_id=00bb34e2f0"
+    name="subscribe"
+    class="contact-form contactform"
     method="post"
-    id="mc-embedded-subscribe-form"
-    name="mc-embedded-subscribe-form"
-    class="validate contactform"
-    target="_self"
+    action="/success"
+    data-netlify="true"
   >
-    <div id="mc_embed_signup_scroll">
-      <div class="mc-field-group">
-        <label for="mce-EMAIL"
-          >Email Addresse <span class="asterisk">*</span>
-        </label>
-        <input
-          type="email"
-          value=""
-          name="EMAIL"
-          class="required email input"
-          id="mce-EMAIL"
-          required
-        />
-        <span id="mce-EMAIL-HELPERTEXT" class="helper_text"></span>
-      </div>
-      <div class="mc-field-group">
-        <label for="mce-FNAME">Vorname </label>
-        <input type="text" value="" name="FNAME" class="" id="mce-FNAME" />
-        <span id="mce-FNAME-HELPERTEXT" class="helper_text"></span>
-      </div>
-      <div class="mc-field-group">
-        <label for="mce-LNAME">Nachname </label>
-        <input type="text" value="" name="LNAME" class="" id="mce-LNAME" />
-        <span id="mce-LNAME-HELPERTEXT" class="helper_text"></span>
-      </div>
-      <div
-        id="mergeRow-gdpr"
-        class="mergeRow gdpr-mergeRow content__gdprBlock mc-field-group"
-      >
-        <div class="content__gdpr">
-          <label>Erlaubnis zum Marketing</label>
-          <p>
-            Sie können sich jederzeit abmelden, indem Sie auf den Link in der
-            Fußzeile unserer E-Mails klicken. Informationen zu unseren
-            Datenschutzpraktiken finden Sie auf unserer Website.
-          </p>
-        </div>
-        <div class="content__gdprLegal">
-          <p>
-            <a href="https://mailchimp.com/legal/terms" target="_blank"
-              >Learn more about Mailchimp's privacy practices here.</a
-            >
-          </p>
-        </div>
-      </div>
-      <div id="mce-responses" class="clear foot">
-        <div
-          class="response"
-          id="mce-error-response"
-          style="display: none"
-        ></div>
-        <div
-          class="response"
-          id="mce-success-response"
-          style="display: none"
-        ></div>
-      </div>
-      <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-      <div style="position: absolute; left: -5000px" aria-hidden="true">
-        <input
-          type="text"
-          name="b_534efaed4adaf712b10fbd9b5_dfb14f89f9"
-          tabindex="-1"
-          value=""
-        />
-      </div>
-      <div class="optionalParent">
-        <div class="clear foot">
-          <input
-            type="submit"
-            value="Abonnieren"
-            name="subscribe"
-            id="mc-embedded-subscribe"
-            class="button"
-          />
-          <p class="brandingLogo">
-            <a
-              href="http://eepurl.com/hX_ODv"
-              title="Mailchimp - email marketing made easy and fun"
-              ><img
-                src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg"
-            /></a>
-          </p>
-        </div>
-      </div>
-    </div>
+    <input type="hidden" name="form-name" value="subscribe" />
+    <label for="first_name">Vorname </label>
+    <input
+      type="text"
+      name="first_name"
+      id="first_name"
+      class="input"
+      required
+    />
+    <label for="last_name">Nachname </label>
+    <input type="text" name="last_name" id="last_name" class="input" required />
+    <label for="email">e-Mail </label>
+    <input type="email" name="email" id="email" class="input" />
+    <button type="submit">Senden</button>
   </form>
 </div>
-
-<!--End mc_embed_signup-->
-
