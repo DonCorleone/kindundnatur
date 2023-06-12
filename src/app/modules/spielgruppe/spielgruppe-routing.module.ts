@@ -9,6 +9,7 @@ import {SpielgruppeNewsletterComponent} from "./spielgruppe-newsletter/spielgrup
 import {
   SpielgruppeLeitungEvamariaComponent
 } from "./spielgruppe-leitung-evamaria/spielgruppe-leitung-evamaria.component";
+import { SuccessComponent } from './success/success.component';
 
 const routes: Routes = [
   {
@@ -37,6 +38,10 @@ const routes: Routes = [
       {
         path: 'newsletter',
         component: SpielgruppeNewsletterComponent, // another child route component that the router renders
+      },
+      {
+        path: 'success',
+        component: SuccessComponent, // another child route component that the router renders
       },
     ],
   },
