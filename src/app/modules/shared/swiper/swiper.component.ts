@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { SwiperOptions } from 'swiper';
 import {File as image4File, ImagesService, Netlifile} from 'src/app/services/images.service';
 import {EMPTY, map, Observable, Subject, takeUntil} from 'rxjs';
@@ -9,6 +9,7 @@ import {environment} from "../../../../environments/environment";
   selector: 'app-swiper',
   templateUrl: './swiper.component.html',
   styleUrls: ['./swiper.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SwiperComponent implements OnInit {
   config: SwiperOptions = {

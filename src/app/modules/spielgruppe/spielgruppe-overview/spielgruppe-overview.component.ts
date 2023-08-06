@@ -1,26 +1,32 @@
-import {Component, OnInit} from '@angular/core';
-import {environment} from "../../../../environments/environment";
-import {DatePipe} from "@angular/common";
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { environment } from '../../../../environments/environment';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-spielgruppe-overview',
   templateUrl: './spielgruppe-overview.component.html',
-  styleUrls: ['./spielgruppe-overview.component.scss']
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SpielgruppeOverviewComponent implements OnInit {
   semestername: string = '';
-  semesterstart: string | null= '';
-  constructor(private datePipe: DatePipe) {
-  }
+  semesterstart: string | null = '';
+  constructor(private datePipe: DatePipe) {}
   ngOnInit(): void {
     const semesterStartStr = environment.START_NEXT_SEMESTER;
-    if (semesterStartStr){
+    if (semesterStartStr) {
       const semesterStartDate = new Date(semesterStartStr);
-      if (semesterStartDate){
-        this.semesterstart = this.datePipe.transform(semesterStartDate,'fullDate','+0200' ,'de-CH');
-        this.semestername = semesterStartDate.getMonth() < 5 ? 'Frühlingssemester' : 'Herbstsemester';
+      if (semesterStartDate) {
+        this.semesterstart = this.datePipe.transform(
+          semesterStartDate,
+          'fullDate',
+          '+0200',
+          'de-CH'
+        );
+        this.semestername =
+          semesterStartDate.getMonth() < 5
+            ? 'Frühlingssemester'
+            : 'Herbstsemester';
       }
     }
   }
 }
-
