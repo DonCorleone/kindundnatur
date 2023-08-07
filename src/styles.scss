@@ -20,14 +20,14 @@ body {
       padding-left: 1rem;
       white-space: break-spaces;
     }
-
-    img {
-      width: 100%;
-      max-width: 300px;
-      filter: brightness(80%);
-    }
   }
 
+  img {
+    width: 100%;
+    max-width: 300px;
+    filter: brightness(80%);
+  }
+  
   a {
     color: $rouge-rubia;
   }
