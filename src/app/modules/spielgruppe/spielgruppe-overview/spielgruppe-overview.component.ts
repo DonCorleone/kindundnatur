@@ -4,8 +4,17 @@ import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-spielgruppe-overview',
+  styles: [
+    `
+      app-swiper {
+        justify-content: center;
+        flex-direction: row;
+        display: flex;
+      }
+    `,
+  ],
   templateUrl: './spielgruppe-overview.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SpielgruppeOverviewComponent implements OnInit {
   semestername: string = '';
