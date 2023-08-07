@@ -1,30 +1,7 @@
 @import "../../../../assets/library";
 
 .contactform {
-  display: grid;
   grid-template-columns: auto 1fr 1fr;
-  grid-auto-flow: row dense;
-  grid-gap: 0.8em;
-  font-family: "Alegreya", minion-pro, serif !important;
-  font-style: normal;
-  font-weight: 400;
-  background: $vert-jaune-clair;
-  color: $terre-ombre-brule;
-  font-size: 1em;
-  grid-row: span 3;
-  padding: 1.2em;
-  & > label {
-    padding-top: 3px;
-    grid-column: 1;
-    grid-row: auto;
-  }
-
-  @media only screen and (max-width: 575px) {
-    grid-template-columns: auto;
-    & > label {
-      margin-bottom: -0.5rem;
-    }
-  }
 
   textarea {
     min-height: calc(100% - 2em);
@@ -40,33 +17,6 @@
     @media only screen and (max-width: 575px) {
       grid-column: 2 / 3;
     }
-  }
-}
-.contactform > input {
-  grid-column: 2;
-  grid-row: auto;
-  border: none;
-  padding: 0.5em;
-  font-family: "Alegreya", minion-pro, serif !important;
-  font-size: large;
-  @media only screen and (max-width: 575px) {
-    grid-column: 1;
-  }
-}
-
-.contactform > button {
-  grid-column: 2 / 3;
-  grid-row: span 3;
-  color: $blanc;
-  background-color: $rouge-rubia;
-  font-family: "Alegreya", minion-pro, serif !important;
-  font-size: 1em;
-  border: none;
-  @media only screen and (max-width: 575px) {
-    grid-column: 1;
-    grid-row: auto;
-    grid-column: 1 / 2;
-    grid-row: span 3;
   }
 }
 #comment-box {

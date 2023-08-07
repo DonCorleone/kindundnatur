@@ -10,6 +10,7 @@ import {
   SpielgruppeLeitungEvamariaComponent
 } from "./spielgruppe-leitung-evamaria/spielgruppe-leitung-evamaria.component";
 import { SuccessComponent } from './success/success.component';
+import { ContactFormComponent } from './contact-form/contact-form.component';
 
 const routes: Routes = [
   {
@@ -38,6 +39,10 @@ const routes: Routes = [
       {
         path: 'newsletter',
         component: SpielgruppeNewsletterComponent, // another child route component that the router renders
+      },
+      {
+        path: 'contact',
+        component: ContactFormComponent, // another child route component that the router renders
       },
       {
         path: 'success',

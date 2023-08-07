@@ -1,22 +1,22 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  OnDestroy,
+} from '@angular/core';
 import { Location } from '@angular/common';
 import { NavigationEnd, Router } from '@angular/router';
 import {
-  BehaviorSubject,
-  EMPTY,
   filter,
-  Observable,
-  of,
   Subject,
   takeUntil,
 } from 'rxjs';
-import { Meta, Title } from '@angular/platform-browser';
-import {SeoService} from "../../services/seo.service";
+import { SeoService } from '../../services/seo.service';
 
 @Component({
   selector: 'app-spielgruppe',
   templateUrl: './spielgruppe.component.html',
   styleUrls: ['./spielgruppe.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SpielgruppeComponent implements OnDestroy {
   home: boolean = false;

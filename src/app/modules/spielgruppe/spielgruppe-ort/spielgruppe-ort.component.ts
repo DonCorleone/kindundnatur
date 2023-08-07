@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'app-spielgruppe-ort',
   templateUrl: './spielgruppe-ort.component.html',
-  styleUrls: ['./spielgruppe-ort.component.scss']
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SpielgruppeOrtComponent {}
