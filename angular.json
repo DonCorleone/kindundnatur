@@ -87,13 +87,13 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "kindundnatur:build:production"
+              "buildTarget": "kindundnatur:build:production"
             },
             "custom": {
-              "browserTarget": "kindundnatur:build:custom"
+              "buildTarget": "kindundnatur:build:custom"
             },
             "development": {
-              "browserTarget": "kindundnatur:build:development"
+              "buildTarget": "kindundnatur:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -101,7 +101,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "kindundnatur:build"
+            "buildTarget": "kindundnatur:build"
           }
         },
         "test": {
