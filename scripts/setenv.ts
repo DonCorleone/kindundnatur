@@ -16,6 +16,7 @@ const environmentFileContent = isProduction
    START_NEXT_SEMESTER: "${process.env?.['START_NEXT_SEMESTER']}",
    NETLIFY_EMAILS_SECRET: "${process.env?.['NETLIFY_EMAILS_SECRET']}",
    EMAIL_SENDER: "${process.env?.['EMAIL_SENDER']}",
+   SITE_NAME: "${process.env?.['SITE_NAME']}",
 };`
   : `export const environment = {
    production: false,
@@ -26,6 +27,7 @@ const environmentFileContent = isProduction
    START_NEXT_SEMESTER: "${process.env?.['START_NEXT_SEMESTER']}",
    NETLIFY_EMAILS_SECRET: "${process.env?.['NETLIFY_EMAILS_SECRET']}",
    EMAIL_SENDER: "${process.env?.['EMAIL_SENDER']}",
+   SITE_NAME: "${process.env?.['SITE_NAME']}",
 };`; // write the content to the respective file
 writeFile(targetPath, environmentFileContent, function (err: any) {
   if (err) {

@@ -8,14 +8,12 @@
     "start": "npm run config-develop --environment=develop && ng serve --configuration=custom",
     "build": "npm run config-prod --environment=prod && ng build --configuration=custom",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "scully": "npx scully --",
-    "scully:serve": "npx scully serve --"
+    "test": "ng test"
   },
   "private": true,
   "dependencies": {
     "@angular/animations": "^17.0.2",
-    "@angular/cdk": "^16.2.12",
+    "@angular/cdk": "^17.0.0",
     "@angular/common": "^17.0.2",
     "@angular/compiler": "^17.0.2",
     "@angular/core": "^17.0.2",
@@ -24,9 +22,6 @@
     "@angular/platform-browser-dynamic": "^17.0.2",
     "@angular/router": "^17.0.2",
     "@netlify/functions": "^1.4.0",
-    "@scullyio/ng-lib": "^2.1.41",
-    "@scullyio/scully": "^2.1.41",
-    "@scullyio/scully-plugin-puppeteer": "^2.1.41",
     "rxjs": "~7.4.0",
     "swiper": "^11.0.4",
     "tslib": "^2.3.0",
