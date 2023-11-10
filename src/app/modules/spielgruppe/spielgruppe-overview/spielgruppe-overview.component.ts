@@ -1,9 +1,15 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { environment } from '../../../../environments/environment';
 import { DatePipe } from '@angular/common';
+import { SwiperComponent } from '../../shared/swiper/swiper.component';
+import {SpielgruppeModule} from "../spielgruppe.module";
+import {RouterLink} from "@angular/router";
+import {ContactFormComponent} from "../contact-form/contact-form.component";
 
 @Component({
   selector: 'app-spielgruppe-overview',
+  standalone: true,
+  imports: [SwiperComponent, RouterLink, ContactFormComponent],
   styles: [
     `
       app-swiper {
