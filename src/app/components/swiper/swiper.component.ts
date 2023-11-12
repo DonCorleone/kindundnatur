@@ -1,5 +1,4 @@
 import {
-  AfterViewInit,
   CUSTOM_ELEMENTS_SCHEMA,
   ChangeDetectionStrategy,
   Component,
@@ -9,11 +8,10 @@ import {
   ViewEncapsulation
 } from '@angular/core';
 import {
-  Card,
   ImagesService,
   Netlifile,
 } from 'src/app/services/images.service';
-import {EMPTY, map, Observable, Subject, take, takeUntil} from 'rxjs';
+import {EMPTY, map, Observable, Subject, takeUntil} from 'rxjs';
 import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
 import {CommonModule} from '@angular/common';
 import {environment} from "../../../environments/environment.custom";
@@ -35,10 +33,9 @@ register();
   encapsulation: ViewEncapsulation.None,
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class SwiperComponent implements OnInit, AfterViewInit {
+export class SwiperComponent implements OnInit {
 
   @ViewChild('swiper') swiper!: ElementRef<SwiperContainer>;
-  @ViewChild('swiperThumbs') swiperThumbs!: ElementRef<SwiperContainer>;
 
   files$: Observable<Netlifile[]> = EMPTY;
 
@@ -64,14 +61,6 @@ export class SwiperComponent implements OnInit, AfterViewInit {
     freeMode: true,
     watchSlidesProgress: true,
   }
-
-  ngAfterViewInit() {
-/*    this.swiper.nativeElement.swiper.activeIndex = this.index;
-    this.swiperThumbs.nativeElement.swiper.activeIndex = this.index;
-
-    this.swiper.nativeElement.addEventListener('swipe', (evt) => this.slideChange(evt));*/
-  }
-
   slideChange(swiper: any) {
     this.index = swiper.detail[0].activeIndex;
   }
