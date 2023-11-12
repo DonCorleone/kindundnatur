@@ -1,18 +1,30 @@
-import { AfterViewInit, CUSTOM_ELEMENTS_SCHEMA, ChangeDetectionStrategy, Component, ElementRef, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import {
+  AfterViewInit,
+  CUSTOM_ELEMENTS_SCHEMA,
+  ChangeDetectionStrategy,
+  Component,
+  ElementRef,
+  OnInit,
+  ViewChild,
+  ViewEncapsulation
+} from '@angular/core';
+import {
+  Card,
   ImagesService,
   Netlifile,
 } from 'src/app/services/images.service';
-import { EMPTY, map, Observable, Subject, take, takeUntil } from 'rxjs';
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { CommonModule } from '@angular/common';
+import {EMPTY, map, Observable, Subject, take, takeUntil} from 'rxjs';
+import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
+import {CommonModule} from '@angular/common';
 import {environment} from "../../../environments/environment.custom";
-import { register } from 'swiper/element/bundle';
+import {register} from 'swiper/element/bundle';
 import {SwiperDirective} from "../../directives/swiper.directive";
 import {SwiperContainer} from "swiper/element";
+import {SwiperOptions} from "swiper/types";
 
 // Swiper
 register();
+
 @Component({
   selector: 'app-swiper',
   standalone: true,
@@ -27,6 +39,7 @@ export class SwiperComponent implements OnInit, AfterViewInit {
 
   @ViewChild('swiper') swiper!: ElementRef<SwiperContainer>;
   @ViewChild('swiperThumbs') swiperThumbs!: ElementRef<SwiperContainer>;
+
   files$: Observable<Netlifile[]> = EMPTY;
 
   private _ngDestroy$ = new Subject<void>();
@@ -34,28 +47,33 @@ export class SwiperComponent implements OnInit, AfterViewInit {
   constructor(
     private imageService: ImagesService,
     private breakpointObserver: BreakpointObserver
-  ) {}
-  ngAfterViewInit(): void {
-    this.files$.pipe(take(1)).subscribe((p) => {
-      // swiper parameters
-      const swiperParams = {
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
-        },
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-        spaceBetween: 30,
-      };
+  ) {
+  }
 
-      const swiperEl: any = document.querySelector('swiper-container');
+  index = 0;
 
-      Object.assign(swiperEl, swiperParams);
-      // const swiper = new Swiper(this.swiperContainer.nativeElement, swiperParams);
-      swiperEl.initialize();
-    });
+  // Swiper
+  swiperConfig: SwiperOptions = {
+    spaceBetween: 10,
+    navigation: true,
+  }
+
+  swiperThumbsConfig: SwiperOptions = {
+    spaceBetween: 10,
+    slidesPerView: 4,
+    freeMode: true,
+    watchSlidesProgress: true,
+  }
+
+  ngAfterViewInit() {
+/*    this.swiper.nativeElement.swiper.activeIndex = this.index;
+    this.swiperThumbs.nativeElement.swiper.activeIndex = this.index;
+
+    this.swiper.nativeElement.addEventListener('swipe', (evt) => this.slideChange(evt));*/
+  }
+
+  slideChange(swiper: any) {
+    this.index = swiper.detail[0].activeIndex;
   }
 
   ngOnInit(): void {
@@ -73,16 +91,15 @@ export class SwiperComponent implements OnInit, AfterViewInit {
           if (result.breakpoints[query]) {
             const match = query.match('\\(max-width:\\s(\\d+)\\.98px\\)');
             const width = match?.length ? match[1] : '2048';
-
             this.files$ = this.imageService.listAssets().pipe(
-              map((p) => {
-                p.forEach(
-                  (image) =>
-                    (image.path = `${environment.URL}${image.path}?nf_resize=smartcrop&w=600&h=450`)
-                );
-                return p;
-              })
-            );
+            map(p => {
+              p.forEach(
+                (image) =>
+                  (image.path = `${environment.URL}${image.path}?nf_resize=smartcrop&w=${width}`)
+              );
+              return p;
+            })
+          );
             break;
           }
         }

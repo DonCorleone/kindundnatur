@@ -26,6 +26,11 @@ export class ImagesService {
   }
 }
 
+export interface Card {
+  title: string;
+  description: string;
+  url: string;
+}
 export interface Netlifile {
   id: string;
   path: string;
