@@ -1,4 +1,4 @@
-import { Routes } from "@angular/router";
+import {Routes} from "@angular/router";
 import {SpielgruppeComponent} from "./components/spielgruppe/spielgruppe.component";
 import {SpielgruppeOverviewComponent} from "./components/spielgruppe-overview/spielgruppe-overview.component";
 import {SpielgruppeInfoComponent} from "./components/spielgruppe-info/spielgruppe-info.component";
@@ -13,42 +13,48 @@ import {SuccessComponent} from "./components/success/success.component";
 
 export const routes: Routes = [
   {
-    path: "about",
+    path: '',
     loadComponent: () =>
-      import("./components/spielgruppe/spielgruppe.component").then((m) => m.SpielgruppeComponent),
-  }, {path: '',
-    component: SpielgruppeComponent, // this is the component with the <router-outlet> in the template
+      import("./components/spielgruppe/spielgruppe.component").then((c) => c.SpielgruppeComponent),
     children: [
       {
-        path: '', // child route path
-        component: SpielgruppeOverviewComponent, // child route component that the router renders
+        path: '',
+        loadComponent: () =>
+          import("./components/spielgruppe-overview/spielgruppe-overview.component").then((c) => c.SpielgruppeOverviewComponent),
       },
       {
         path: 'info',
-        component: SpielgruppeInfoComponent, // another child route component that the router renders
+        loadComponent: () =>
+          import("./components/spielgruppe-info/spielgruppe-info.component").then((c) => c.SpielgruppeInfoComponent) // another child route component that the router renders
       },
       {
         path: 'leitung',
-        component: SpielgruppeLeitungComponent, // another child route component that the router renders
-      },{
+        loadComponent: () =>
+          import("./components/spielgruppe-leitung/spielgruppe-leitung.component").then((c) => c.SpielgruppeLeitungComponent) // another child route component that the router renders
+      }, {
         path: 'leitungEvamaria',
-        component: SpielgruppeLeitungEvamariaComponent, // another child route component that the router renders
+        loadComponent: () =>
+          import("./components/spielgruppe-leitung-evamaria/spielgruppe-leitung-evamaria.component").then((c) => c.SpielgruppeLeitungEvamariaComponent) // another child route component that the router renders
       },
       {
         path: 'ort',
-        component: SpielgruppeOrtComponent, // another child route component that the router renders
+        loadComponent: () =>
+          import("./components/spielgruppe-ort/spielgruppe-ort.component").then((c) => c.SpielgruppeOrtComponent) // another child route component that the router renders
       },
       {
         path: 'newsletter',
-        component: SpielgruppeNewsletterComponent, // another child route component that the router renders
+        loadComponent: () =>
+          import("./components/spielgruppe-newsletter/spielgruppe-newsletter.component").then((c) => c.SpielgruppeNewsletterComponent), // another child route component that the router renders
       },
       {
         path: 'contact',
-        component: ContactFormComponent, // another child route component that the router renders
+        loadComponent: () =>
+          import("./components/contact-form/contact-form.component").then((c) => c.ContactFormComponent), // another child route component that the router renders
       },
       {
         path: 'success',
-        component: SuccessComponent, // another child route component that the router renders
+        loadComponent: () =>
+          import("./components/success/success.component").then((c) => c.SuccessComponent), // another child route component that the router renders
       },
     ],
   },
