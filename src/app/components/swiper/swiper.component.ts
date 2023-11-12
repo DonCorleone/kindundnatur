@@ -95,7 +95,7 @@ export class SwiperComponent implements OnInit, AfterViewInit {
             map(p => {
               p.forEach(
                 (image) =>
-                  (image.path = `${environment.URL}${image.path}?nf_resize=smartcrop&w=${width}`)
+                  (image.path = `${environment.URL}${image.path}?nf_resize=fit&w=${width}`)
               );
               return p;
             })
