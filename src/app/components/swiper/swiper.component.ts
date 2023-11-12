@@ -8,13 +8,15 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { CommonModule } from '@angular/common';
 import {environment} from "../../../environments/environment.custom";
 import { register } from 'swiper/element/bundle';
+import {SwiperDirective} from "../../directives/swiper.directive";
+import {SwiperContainer} from "swiper/element";
 
 // Swiper
 register();
 @Component({
   selector: 'app-swiper',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, SwiperDirective],
   templateUrl: './swiper.component.html',
   styleUrls: ['./swiper.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -23,7 +25,8 @@ register();
 })
 export class SwiperComponent implements OnInit, AfterViewInit {
 
-  @ViewChild('swiper-container') swiperContainer!: ElementRef;
+  @ViewChild('swiper') swiper!: ElementRef<SwiperContainer>;
+  @ViewChild('swiperThumbs') swiperThumbs!: ElementRef<SwiperContainer>;
   files$: Observable<Netlifile[]> = EMPTY;
 
   private _ngDestroy$ = new Subject<void>();
