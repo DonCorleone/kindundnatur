@@ -89,13 +89,14 @@ export class SwiperComponent implements OnInit, AfterViewInit {
       .subscribe((result) => {
         for (const query of Object.keys(result.breakpoints)) {
           if (result.breakpoints[query]) {
-            const match = query.match('\\(max-width:\\s(\\d+)\\.98px\\)');
+            const match = query.match('\\(min-width:\\s(\\d+)\\.98px\\)');
             const width = match?.length ? match[1] : '2048';
+            const height = 3/4*+width;
             this.files$ = this.imageService.listAssets().pipe(
             map(p => {
               p.forEach(
                 (image) =>
-                  (image.path = `${environment.URL}${image.path}?nf_resize=fit&w=${width}`)
+                  (image.path = `${environment.URL}${image.path}?nf_resize=smartcrop&w=${width}&h=${Math.round(height)}`)
               );
               return p;
             })
