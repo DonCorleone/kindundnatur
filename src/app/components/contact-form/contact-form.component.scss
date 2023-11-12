@@ -1,0 +1,30 @@
+@import "../../../assets/library";
+
+.contactform {
+  grid-template-columns: auto 1fr 1fr;
+
+  textarea {
+    min-height: calc(100% - 2em);
+    width: 100%;
+    border: none;
+    font-family: "Alegreya", minion-pro, serif !important;
+    font-size: large;
+    padding: 0.5em;
+    box-sizing: border-box;
+  }
+  & > button {
+    grid-column: 2 / 4;
+    @media only screen and (max-width: 575px) {
+      grid-column: 2 / 3;
+    }
+  }
+}
+#comment-box {
+  grid-column: 3;
+  grid-row: span 3;
+
+  @media only screen and (max-width: 575px) {
+    grid-column: 1 / 2;
+    grid-row: span 3;
+  }
+}

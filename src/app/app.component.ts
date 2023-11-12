@@ -1,9 +1,11 @@
 import {ChangeDetectionStrategy, Component} from '@angular/core';
 import {SeoService} from "./services/seo.service";
-import {NavigationEnd} from "@angular/router";
+import {NavigationEnd, RouterOutlet} from "@angular/router";
 
 @Component({
   selector: 'app-root',
+  standalone: true,
+  imports: [RouterOutlet],
   template: '<router-outlet></router-outlet>',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
