@@ -1,5 +1,7 @@
 @import '../../../assets/library';
-
+:root {
+  --swiper-navigation-color: $rouge-rubia;
+}
 swiper-container {
   display: block;
   height: auto;
@@ -19,6 +21,7 @@ swiper-container {
     }
   }
 }
+
 swiper-container::part(button-prev) {
   color: $rouge-rubia;
 }

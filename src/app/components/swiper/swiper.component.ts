@@ -7,7 +7,10 @@ import { EMPTY, map, Observable, Subject, take, takeUntil } from 'rxjs';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { CommonModule } from '@angular/common';
 import {environment} from "../../../environments/environment.custom";
+import { register } from 'swiper/element/bundle';
 
+// Swiper
+register();
 @Component({
   selector: 'app-swiper',
   standalone: true,
