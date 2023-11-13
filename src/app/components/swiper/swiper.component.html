@@ -2,6 +2,6 @@
     <swiper-container *ngIf="files$ | async as files" appSwiper #swiper [config]="swiperConfig" thumbs-swiper=".mySwiper2" (swipe)=slideChange($event)>
       <swiper-slide *ngFor="let file of files">
         <img [src]="file.path" width="100%" [alt]="file.path" loading="lazy"/>
-        <div class="swiper-lazy-preloader"></div>
+        <div class="swiper"></div>
       </swiper-slide>
     </swiper-container>
