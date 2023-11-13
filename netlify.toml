@@ -1,5 +1,5 @@
 [build]
-  command = "npm run build --configuration=production"
+  command = "npm run prerender"
   functions = "netlify/functions"
   publish = "dist/kindundnatur"
 

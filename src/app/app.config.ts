@@ -30,5 +30,5 @@ export const appConfig: ApplicationConfig = {
       provide: LOCALE_ID,
       useValue: 'de-CH'
     },
-    Swiper],
+    Swiper, provideClientHydration()],
 };
