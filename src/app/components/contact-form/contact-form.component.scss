@@ -2,7 +2,9 @@
 
 .contactform {
   grid-template-columns: auto 1fr 1fr;
-
+  @media only screen and (max-width: 575px) {
+    grid-template-columns: 1fr;
+  }
   textarea {
     min-height: calc(100% - 2em);
     width: 100%;
@@ -15,7 +17,7 @@
   & > button {
     grid-column: 2 / 4;
     @media only screen and (max-width: 575px) {
-      grid-column: 2 / 3;
+      grid-column: 1 / 2;
     }
   }
 }
