@@ -1,7 +1,7 @@
 [build]
   command = "npm run prerender"
   functions = "netlify/functions"
-  publish = "dist/kindundnatur"
+  publish = "dist/kindundnatur/browser"
 
 [[redirects]]
   from = "/*"
