@@ -13,7 +13,7 @@ import {
 } from 'src/app/services/images.service';
 import {EMPTY, map, Observable, Subject, takeUntil} from 'rxjs';
 import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
-import {CommonModule} from '@angular/common';
+import {CommonModule, NgOptimizedImage} from '@angular/common';
 import {environment} from "../../../environments/environment.custom";
 import {register} from 'swiper/element/bundle';
 import {SwiperDirective} from "../../directives/swiper.directive";
@@ -26,7 +26,7 @@ register();
 @Component({
   selector: 'app-swiper',
   standalone: true,
-  imports: [CommonModule, SwiperDirective],
+  imports: [CommonModule, SwiperDirective, NgOptimizedImage],
   templateUrl: './swiper.component.html',
   styleUrls: ['./swiper.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -38,6 +38,8 @@ export class SwiperComponent implements OnInit {
   @ViewChild('swiper') swiper!: ElementRef<SwiperContainer>;
 
   files$: Observable<Netlifile[]> = EMPTY;
+  width= 0;
+  height= 0;
 
   private _ngDestroy$ = new Subject<void>();
 
@@ -79,13 +81,13 @@ export class SwiperComponent implements OnInit {
         for (const query of Object.keys(result.breakpoints)) {
           if (result.breakpoints[query]) {
             const match = query.match('\\(max-width:\\s(\\d+)\\.98px\\)');
-            const width = match?.length ? match[1] : '2048';
-            const height = 3/4*+width;
+            this.width = +(match?.length ? match[1] : '2048');
+            this.height = 3/4*this.width;
             this.files$ = this.imageService.listAssets().pipe(
             map(p => {
               p.forEach(
                 (image) =>
-                  (image.path = `${environment.URL}${image.path}?nf_resize=smartcrop&w=${width}&h=${Math.round(height)}`)
+                  (image.path = `${environment.URL}${image.path}?nf_resize=smartcrop&w=${this.width}&h=${Math.round(this.height)}`)
               );
               return p;
             })
