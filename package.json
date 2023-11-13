@@ -12,7 +12,7 @@
     "dev:ssr": "ng run kindundnatur:serve-ssr",
     "serve:ssr": "node dist/kindundnatur/server/main.js",
     "build:ssr": "ng build && ng run kindundnatur:server",
-    "prerender": "ng run kindundnatur:prerender"
+    "prerender": "npm run config-prod --environment=prod && ng run kindundnatur:prerender"
   },
   "private": true,
   "dependencies": {
