@@ -93,7 +93,6 @@
   .grid-footer {
     grid-area: grid-footer;
 
-    font-size: smaller;
     padding-top: 50px;
     display: flex;
     flex-direction: row;
@@ -117,6 +116,17 @@
     width: 0;
   }
 
+  .grid-footer-home {
+    grid-area: grid-footer;
+
+    padding-top: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
   .footer-images {
     display: flex;
     flex-direction: column;
