@@ -49,22 +49,10 @@ export class SwiperComponent implements OnInit {
   ) {
   }
 
-  index = 0;
-
   // Swiper
   swiperConfig: SwiperOptions = {
     spaceBetween: 10,
     navigation: true,
-  }
-
-  swiperThumbsConfig: SwiperOptions = {
-    spaceBetween: 10,
-    slidesPerView: 4,
-    freeMode: true,
-    watchSlidesProgress: true,
-  }
-  slideChange(swiper: any) {
-    this.index = swiper.detail[0].activeIndex;
   }
 
   ngOnInit(): void {
