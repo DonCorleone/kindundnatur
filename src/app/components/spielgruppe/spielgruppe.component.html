@@ -1,0 +1,65 @@
+<div class="spielgruppe-wrapper">
+  <div class="grid-container">
+    <div class="grid-header">
+      <a routerLink="/"> <app-header [isSpielgruppe]="true"></app-header></a>
+    </div>
+
+    <div class="grid-logo">
+      <div class="grid-logo-left"></div>
+      <div class="grid-logo-spielgruppen">
+        <a routerLink="/">
+          <app-spielgruppe-icon
+            [hideTypeFont]="false"
+            [isModuleIcon]="true"
+          ></app-spielgruppe-icon
+        ></a>
+      </div>
+      <div class="grid-logo-right"></div>
+    </div>
+
+    <div class="grid-body-left"></div>
+    <div class="grid-body">
+      <router-outlet></router-outlet>
+    </div>
+    <div class="grid-body-right"></div>
+
+    <div *ngIf="!home; else homeFooter" class="grid-footer">
+      <div class="grid-footer-left"></div>
+      <div class="grid-icon-back">
+          <a href="javascript:void(0)" (click)="back()">
+            <app-back-icon [isSpielgruppe]="true"></app-back-icon>
+          </a>
+      </div>
+      <div class="grid-footer-right"></div>
+    </div>
+
+    <ng-template #homeFooter>
+      <div class="grid-footer-home">
+        <div class="footer-images">
+          <p>
+            Telefonnummer Natalie Wieland-Hofer<br />
+            <img src="assets/telnr.png" alt="telNr" loading="lazy"/>
+          </p>
+          <p>
+            <a href="https://sslv.ch">
+              Die Naturspielgruppe Tribschenhorn ist Mitglied des Programms
+              Frühe Sprachförderung der Stadt Luzern
+            </a>
+          </p>
+          <a href="http://www.kinderbetreuung.stadtluzern.ch/">
+            <img src="assets/foerderung.png" alt="foerderung" loading="lazy"/>
+            <img src="assets/stadtluzern.png" alt ="stadtluzern" loading="lazy"/>
+          </a>
+          <p>
+            <a href="https://sslv.ch">
+              Die Naturspielgruppe Tribschenhorn ist Mitglied bei SSLV
+            </a>
+          </p>
+          <a href="https://sslv.ch">
+            <img src="assets/sslv.png" alt="sslv" loading="lazy"/>
+          </a>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+</div>

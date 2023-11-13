@@ -6,6 +6,13 @@
 body {
   margin: unset;
 
+  h1, h2, h3, h4 {
+    margin-block-end: 0;
+  }
+
+  p {
+    margin-block-start: 0.7rem;
+  }
   table {
     font-size: smaller;
 
@@ -21,7 +28,7 @@ body {
       white-space: break-spaces;
     }
   }
-  
+
   a {
     color: $rouge-rubia;
   }

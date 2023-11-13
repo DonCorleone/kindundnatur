@@ -23,7 +23,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/kindundnatur",
+            "outputPath": "dist/kindundnatur/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -87,13 +87,13 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "kindundnatur:build:production"
+              "buildTarget": "kindundnatur:build:production"
             },
             "custom": {
-              "browserTarget": "kindundnatur:build:custom"
+              "buildTarget": "kindundnatur:build:custom"
             },
             "development": {
-              "browserTarget": "kindundnatur:build:development"
+              "buildTarget": "kindundnatur:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -101,7 +101,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "kindundnatur:build"
+            "buildTarget": "kindundnatur:build"
           }
         },
         "test": {
@@ -116,9 +116,82 @@
             "styles": ["src/styles.scss"],
             "scripts": []
           }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/kindundnatur/server",
+            "main": "server.ts",
+            "tsConfig": "tsconfig.server.json",
+            "inlineStyleLanguage": "scss"
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media",
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.custom.ts"
+                }
+              ]
+            },
+            "custom": {
+              "buildOptimizer": false,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.custom.ts"
+                }
+              ],
+              "optimization": false,
+              "sourceMap": true,
+              "extractLicenses": false,
+              "vendorChunk": true
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "sourceMap": true,
+              "extractLicenses": false,
+              "vendorChunk": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve-ssr": {
+          "builder": "@angular-devkit/build-angular:ssr-dev-server",
+          "configurations": {
+            "development": {
+              "browserTarget": "kindundnatur:build:development",
+              "serverTarget": "kindundnatur:server:development"
+            },
+            "production": {
+              "browserTarget": "kindundnatur:build:production",
+              "serverTarget": "kindundnatur:server:production"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "prerender": {
+          "builder": "@angular-devkit/build-angular:prerender",
+          "options": {
+            "routes": [
+              "/"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "kindundnatur:build:production",
+              "serverTarget": "kindundnatur:server:production"
+            },
+            "development": {
+              "browserTarget": "kindundnatur:build:development",
+              "serverTarget": "kindundnatur:server:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }
-  },
-  "defaultProject": "kindundnatur"
+  }
 }
