@@ -63,9 +63,9 @@
   1280.- (Mit Rabatt) für zwei Vormittage pro Woche pro Semester</p>
   <h2>Anmeldung:</h2>
   <p>
-    <span ngif="semesterstart"
-    >Das {{ semestername }} startet am {{ semesterstart }}.
-    </span>
+    @if(semesterstart){
+      <span>Das {{ semestername }} startet am {{ semesterstart }}.</span>
+    }
   </p>
   <p>
     Die Kinder können laufend angemeldet werden. Es gibt auch eine Warteliste.
