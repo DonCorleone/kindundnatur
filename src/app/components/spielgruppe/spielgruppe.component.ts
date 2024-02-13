@@ -3,7 +3,7 @@ import {
   Component,
   OnDestroy,
 } from '@angular/core';
-import {Location, NgIf} from '@angular/common';
+import {Location} from '@angular/common';
 import {NavigationEnd, Router, RouterLink, RouterOutlet} from '@angular/router';
 import {
   filter,
@@ -24,7 +24,6 @@ import {BackIconComponent} from "../back-icon/back-icon.component";
     BackIconComponent,
     RouterOutlet,
     RouterLink,
-    NgIf
   ],
   templateUrl: './spielgruppe.component.html',
   styleUrls: ['./spielgruppe.component.scss'],

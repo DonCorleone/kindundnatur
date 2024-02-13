@@ -23,23 +23,9 @@
     </div>
     <div class="grid-body-right"></div>
 
-    <div *ngIf="!home; else homeFooter" class="grid-footer">
-      <div class="grid-footer-left"></div>
-      <div class="grid-icon-back">
-          <a href="javascript:void(0)" (click)="back()">
-            <app-back-icon [isSpielgruppe]="true"></app-back-icon>
-          </a>
-      </div>
-      <div class="grid-footer-right"></div>
-    </div>
-
-    <ng-template #homeFooter>
+    @if(home){
       <div class="grid-footer-home">
         <div class="footer-images">
-          <p>
-            Telefonnummer Natalie Wieland-Hofer<br />
-            <img src="assets/telnr.png" alt="telNr" loading="lazy"/>
-          </p>
           <p>
             <a href="https://sslv.ch">
               Die Naturspielgruppe Tribschenhorn ist Mitglied des Programms
@@ -60,6 +46,16 @@
           </a>
         </div>
       </div>
-    </ng-template>
+    }@else{
+      <div class="grid-footer">
+        <div class="grid-footer-left"></div>
+        <div class="grid-icon-back">
+            <a href="javascript:void(0)" (click)="back()">
+              <app-back-icon [isSpielgruppe]="true"></app-back-icon>
+            </a>
+        </div>
+        <div class="grid-footer-right"></div>
+      </div>
+    }
   </div>
 </div>

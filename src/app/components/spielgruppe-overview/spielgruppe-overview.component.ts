@@ -1,10 +1,9 @@
-import {ChangeDetectionStrategy, Component, LOCALE_ID, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import {RouterLink} from "@angular/router";
 import {ContactFormComponent} from "../contact-form/contact-form.component";
 import {SwiperComponent} from "../swiper/swiper.component";
 import {DatePipe} from "@angular/common";
 import {environment} from "../../../environments/environment.custom";
-import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-spielgruppe-overview',
