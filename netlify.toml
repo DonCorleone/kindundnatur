@@ -4,9 +4,10 @@
   publish = "dist/kindundnatur/browser"
 
 [[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+  from = "https://kindundnatur.ch/*"
+  to = "https://www.naturspielgruppe-tribschenhorn.ch/:splat"
+  status = 301
+  force = true
 
 [[headers]]
   for = "/*"
